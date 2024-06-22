@@ -1,1 +1,0 @@
-web: gunicorn CV_NLP_API:app
