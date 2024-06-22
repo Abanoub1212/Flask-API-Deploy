@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 import io
 from PIL import Image
 import pytesseract
-import cv2
+# import cv2
 import joblib
 import numpy
 from NLP.NLP import QAModel
@@ -48,8 +48,8 @@ def predict():
 
                 return closest_name
             img = np.array(image)
-            img = cv2.resize(img, (1000, 400))
-            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) / 255.0
+            # img = cv2.resize(img, (1000, 400))
+            # gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) / 255.0
             text = pytesseract.image_to_string(img).lower()
             response = LCS(text, drugs)
 
