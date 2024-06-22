@@ -7,8 +7,8 @@ import cv2
 import joblib
 import numpy
 from NLP.NLP import QAModel
-NLP_Model = joblib.load('NLPModel/NLP_Model.joblib')
 app = Flask(__name__)
+NLP_Model = joblib.load('NLP_Model.joblib')
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.files:
